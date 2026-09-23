@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ken Flores — Portfolio ingénieur</title>
+<meta name="description" content="Ken Flores, élève ingénieur ECAM LaSalle × Politecnico di Milano : conception mécanique et calcul de structures. Stage de fin d'études de 6 mois dès février 2027.">
+<meta name="author" content="Ken Flores">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ken Flores — Portfolio ingénieur">
+<meta property="og:description" content="Conception mécanique et calcul de structures : PoliSpace, Expleo, Formula Student, FRADEM. Stage de 6 mois dès février 2027.">
+<meta property="og:image" content="img/efst-voiture.jpg">
+<meta name="theme-color" content="#131C27">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23131C27'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='28' fill='%23fff' text-anchor='middle'%3EKF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  --ground:#F2F4F6;
+  --sheet:#FFFFFF;
+  --ink:#131C27;
+  --muted:#556271;
+  --rule:#C9D1DA;
+  --rule-strong:#131C27;
+  --accent:#0A62C2;
+  --cote:#C4411F;
+  --tint:#E7EDF4;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0D131A;--sheet:#141C25;--ink:#E4EAF1;--muted:#93A1B1;--rule:#2A3643;--rule-strong:#C9D3DE;--accent:#5FA8FF;--cote:#FF8A63;--tint:#1B2631;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0D131A;--sheet:#141C25;--ink:#E4EAF1;--muted:#93A1B1;--rule:#2A3643;--rule-strong:#C9D3DE;--accent:#5FA8FF;--cote:#FF8A63;--tint:#1B2631;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{background:var(--ground);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+.mono{font-family:var(--mono)}
+.label{font:500 11px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* --- barre --- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--ground) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.mark{font:800 15px/1 var(--display);font-stretch:112%;letter-spacing:.02em;color:var(--ink);text-decoration:none}
+.bar nav{display:flex;gap:clamp(12px,2.4vw,28px);flex-wrap:wrap}
+.bar nav a{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.bar nav a:hover{color:var(--ink)}
+@media (max-width:560px){.bar nav a.opt{display:none}}
+
+/* --- en-tête --- */
+.hero{padding-block:clamp(40px,7vw,88px) clamp(28px,4vw,48px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:end}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
+.hero h1{font:800 clamp(52px,9vw,116px)/.88 var(--display);font-stretch:116%;letter-spacing:-.02em;margin:14px 0 22px}
+.hero h1 span{display:block;font-size:.36em;line-height:1.1;font-stretch:80%;font-weight:600;letter-spacing:.01em;color:var(--cote);margin-top:.5em}
+.lede{font-size:clamp(17px,1.9vw,20px);line-height:1.55;max-width:34em;margin:0}
+.lede strong{font-weight:600}
+
+/* cartouche */
+.cartouche{border:1.5px solid var(--rule-strong);background:var(--sheet);font-family:var(--mono);font-size:13px}
+.cartouche .row{display:grid;grid-template-columns:118px 1fr;border-top:1px solid var(--rule)}
+.cartouche .row:first-child{border-top:0}
+.cartouche .k{padding:9px 12px;border-right:1px solid var(--rule);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center}
+.cartouche .v{padding:9px 12px;color:var(--ink)}
+.cartouche .v.hl{color:var(--cote);font-weight:500}
+.cartouche .head{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;background:var(--ink);color:var(--sheet);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+
+/* nomenclature */
+.nomen{margin-top:clamp(36px,5vw,56px)}
+.nomen h2{margin:0 0 10px}
+.table-scroll{overflow-x:auto;border:1.5px solid var(--rule-strong);background:var(--sheet)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font:500 10.5px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--tint)}
+tr:last-child td{border-bottom:0}
+td.rep{font-family:var(--mono);font-weight:500;width:56px;color:var(--cote)}
+td a{font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+td a:hover{color:var(--accent);border-color:var(--accent)}
+td.y{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--muted)}
+td.t{color:var(--muted);font-size:13px}
+
+/* --- projets --- */
+.section-title{font:800 clamp(28px,4vw,40px)/1 var(--display);font-stretch:108%;letter-spacing:-.01em;margin:0}
+.projects{padding-block:clamp(40px,6vw,72px)}
+.projects > .wrap > header{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.project{background:var(--sheet);border:1.5px solid var(--rule-strong);margin-bottom:clamp(28px,4vw,44px);scroll-margin-top:72px}
+.p-head{display:grid;grid-template-columns:auto 1fr auto;border-bottom:1.5px solid var(--rule-strong)}
+.p-rep{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:14px 18px;border-right:1px solid var(--rule);font-family:var(--mono);min-width:74px}
+.p-rep b{font-size:26px;font-weight:500;color:var(--cote);line-height:1}
+.p-title{padding:16px 20px;min-width:0}
+.p-title h3{font:800 clamp(22px,3vw,32px)/1.05 var(--display);font-stretch:104%;margin:4px 0 0;text-wrap:balance}
+.p-meta{padding:14px 18px;border-left:1px solid var(--rule);font-family:var(--mono);font-size:12px;color:var(--muted);text-align:right;display:flex;flex-direction:column;justify-content:center;gap:2px;white-space:nowrap}
+@media (max-width:680px){
+  .p-head{grid-template-columns:auto 1fr}
+  .p-meta{grid-column:1/-1;border-left:0;border-top:1px solid var(--rule);text-align:left;flex-direction:row;flex-wrap:wrap;gap:4px 16px;white-space:normal}
+}
+.p-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:0}
+@media (max-width:900px){.p-body{grid-template-columns:1fr}}
+.p-text{padding:clamp(20px,3vw,32px);border-right:1px solid var(--rule)}
+@media (max-width:900px){.p-text{border-right:0;border-bottom:1px solid var(--rule)}}
+.p-text p{margin:0 0 14px;max-width:62ch}
+.p-text h4{font:500 11px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:22px 0 8px}
+.p-text ul{margin:0;padding-left:1.1em}
+.p-text li{margin-bottom:6px;max-width:60ch}
+.p-text li::marker{color:var(--cote)}
+.tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
+.tools span{font:500 11.5px/1 var(--mono);padding:6px 8px;border:1px solid var(--rule);color:var(--muted);background:var(--ground)}
+
+/* cotes */
+.cotes{display:grid;gap:14px;margin:22px 0 4px}
+.cote{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center}
+.cote .val{font:500 clamp(18px,2.2vw,22px)/1 var(--mono);color:var(--cote);font-variant-numeric:tabular-nums;white-space:nowrap}
+.cote .dim{position:relative;height:12px;min-width:40px}
+.cote .dim::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px solid var(--cote)}
+.cote .dim::after{content:"";position:absolute;inset:0;border-left:1px solid var(--cote);border-right:1px solid var(--cote)}
+.cote .txt{grid-column:1/-1;font-size:13.5px;color:var(--muted);line-height:1.45}
+
+/* galerie */
+.gallery{padding:clamp(14px,2vw,20px);display:grid;grid-template-columns:repeat(6,1fr);gap:10px;align-content:start;background:var(--tint)}
+.gallery figure{margin:0;grid-column:span 3;display:flex;flex-direction:column}
+.gallery figure.wide{grid-column:span 6}
+.gallery figure.third{grid-column:span 2}
+.gallery button{all:unset;cursor:zoom-in;display:block;background:#fff;border:1px solid var(--rule);overflow:hidden;aspect-ratio:4/3}
+.gallery figure.wide button{aspect-ratio:16/8}
+.gallery button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.gallery img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .35s ease}
+.gallery img.cover{object-fit:cover}
+.gallery button:hover img{transform:scale(1.03)}
+.gallery figcaption{font:400 11.5px/1.4 var(--mono);color:var(--muted);padding:6px 2px 2px}
+@media (max-width:520px){
+  .gallery figure,.gallery figure.third{grid-column:span 6}
+}
+
+/* sous-projets (FRADEM) */
+.sub{border-top:1px solid var(--rule);padding-top:4px;margin-top:18px}
+.sub:first-of-type{border-top:0;margin-top:0;padding-top:0}
+
+/* --- compétences --- */
+.skills{padding-block:clamp(40px,6vw,72px);border-top:1.5px solid var(--rule-strong)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;margin-top:28px;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.skill{padding:20px 22px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--sheet)}
+.skill h3{font:700 17px/1.2 var(--display);font-stretch:100%;margin:0 0 10px}
+.skill p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.6}
+.skill p b{color:var(--ink);font-weight:500}
+
+/* --- parcours --- */
+.path{padding-block:clamp(40px,6vw,72px);border-top:1.5px solid var(--rule-strong)}
+.path ol{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:0}
+.path li{display:grid;grid-template-columns:170px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.path li:first-child{border-top:1px solid var(--rule)}
+.path .when{font:500 13px/1.5 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.path h3{font:700 19px/1.25 var(--display);margin:0}
+.path p{margin:4px 0 0;color:var(--muted);font-size:14.5px;max-width:64ch}
+@media (max-width:600px){.path li{grid-template-columns:1fr;gap:4px}}
+.aside{margin-top:28px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;padding:20px 22px;background:var(--sheet);border:1px solid var(--rule)}
+.aside .val{font:500 22px/1 var(--mono);color:var(--cote)}
+.aside p{margin:0;max-width:64ch}
+
+/* --- contact --- */
+.contact{padding-block:clamp(48px,7vw,88px);background:var(--ink);color:var(--sheet)}
+.contact .label{color:color-mix(in srgb,var(--sheet) 65%,var(--ink))}
+.contact h2{font:800 clamp(34px,6vw,64px)/.95 var(--display);font-stretch:112%;margin:12px 0 20px;text-wrap:balance}
+.contact p{max-width:52ch;margin:0 0 28px;color:color-mix(in srgb,var(--sheet) 80%,var(--ink))}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.email{font:500 clamp(16px,2.4vw,20px)/1 var(--mono);padding:14px 16px;border:1px solid color-mix(in srgb,var(--sheet) 35%,var(--ink));user-select:all;overflow-wrap:anywhere}
+.btn{font:500 13px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:15px 16px;border:1px solid var(--sheet);background:var(--sheet);color:var(--ink);cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--sheet)}
+.btn:hover{opacity:.88}
+.foot{font:400 12px/1.5 var(--mono);color:color-mix(in srgb,var(--sheet) 55%,var(--ink));margin-top:48px}
+
+/* lightbox */
+dialog{border:0;padding:0;background:transparent;max-width:min(1200px,94vw);max-height:92vh}
+dialog::backdrop{background:rgba(8,12,18,.86)}
+dialog img{max-width:100%;max-height:82vh;display:block;background:#fff;margin:0 auto}
+dialog p{font:400 13px/1.4 var(--mono);color:#E4EAF1;margin:10px 0 0;text-align:center}
+dialog button{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:12px;font:500 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em;padding:10px 12px;background:#fff;color:#131C27;border:0;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="wrap">
+    <a class="mark" href="#top">KEN FLORES</a>
+    <nav aria-label="Sections">
+      <a href="#projets">Projets</a>
+      <a class="opt" href="#competences">Compétences</a>
+      <a class="opt" href="#parcours">Parcours</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="label">Élève ingénieur · ECAM LaSalle × Politecnico di Milano</div>
+          <h1>Ken Flores<span>Conception &amp; structures</span></h1>
+          <p class="lede">Je conçois des pièces mécaniques, je les dimensionne et je les documente jusqu’au plan — de la quille de télécabine au châssis de Formula Student. <strong>Je cherche un stage de fin d’études de 6 mois à partir de février 2027.</strong></p>
+        </div>
+        <div class="cartouche" role="table" aria-label="Fiche d'identité">
+          <div class="head" role="row"><span>Fiche candidat</span><span>Rév. 2026-09</span></div>
+          <div class="row" role="row"><div class="k" role="rowheader">Nom</div><div class="v" role="cell">FLORES Ken</div></div>
+          <div class="row" role="row"><div class="k" role="rowheader">Diplôme</div><div class="v" role="cell">Ingénieur généraliste ECAM LaSalle — promo 2027</div></div>
+          <div class="row" role="row"><div class="k" role="rowheader">Spécialité</div><div class="v" role="cell">Usine du futur &amp; qualité industrielle</div></div>
+          <div class="row" role="row"><div class="k" role="rowheader">Échange</div><div class="v" role="cell">Politecnico di Milano — ingénierie aéronautique</div></div>
+          <div class="row" role="row"><div class="k" role="rowheader">Stage</div><div class="v hl" role="cell">6 mois · dès février 2027</div></div>
+          <div class="row" role="row"><div class="k" role="rowheader">Mobilité</div><div class="v" role="cell">Toute la France et l’international</div></div>
+          <div class="row" role="row"><div class="k" role="rowheader">Langues</div><div class="v" role="cell">FR natif · EN B2 · IT B1</div></div>
+        </div>
+      </div>
+
+      <div class="nomen">
+        <h2 class="label">Nomenclature des projets</h2>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Rep.</th><th>Désignation</th><th>Organisation</th><th>Période</th><th>Outils</th></tr></thead>
+            <tbody>
+              <tr><td class="rep">01</td><td><a href="#gem-gcr">Habitat de cultures cellulaires pour ballon stratosphérique</a></td><td>PoliSpace — Milan</td><td class="y">2026</td><td class="t">Fusion 360, analyse structurale</td></tr>
+              <tr><td class="rep">02</td><td><a href="#expleo">Quille amortie de télécabine &amp; assemblage cabine</a></td><td>Expleo × SigmaCabin (POMA)</td><td class="y">2025</td><td class="t">Siemens NX, TeamCenter</td></tr>
+              <tr><td class="rep">03</td><td><a href="#efst">Châssis tubulaire paramétré de Formula Student</a></td><td>ECAM Formula Student Team</td><td class="y">2024–25</td><td class="t">Fusion 360, FS Rules, RDM</td></tr>
+              <tr><td class="rep">04</td><td><a href="#fradem">Rack à tôle, hotte d’aspiration, mât de brise-roche</a></td><td>FRADEM — Domène</td><td class="y">2022</td><td class="t">SolidWorks, AutoCAD, atelier</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects" id="projets">
+    <div class="wrap">
+      <header>
+        <h2 class="section-title">Projets</h2>
+        <span class="label">Cliquer une image pour l’agrandir</span>
+      </header>
+
+      <!-- 01 PoliSpace -->
+      <article class="project" id="gem-gcr">
+        <div class="p-head">
+          <div class="p-rep"><span class="label">Rep.</span><b>01</b></div>
+          <div class="p-title"><div class="label">PoliSpace · association étudiante · Milan</div><h3>GEM-GCR : un habitat pour cellules humaines dans la stratosphère</h3></div>
+          <div class="p-meta"><span>Ingénieur structures</span><span>Mars → Sept. 2026</span></div>
+        </div>
+        <div class="p-body">
+          <div class="p-text">
+            <p>GEM-GCR étudie les mutations de l’ADN humain causées par les rayons cosmiques galactiques. Des cultures cellulaires montent en ballon stratosphérique ; un gène sentinelle sert de marqueur indirect des mutations. À terme, la méthode pourrait renforcer la protection des astronautes sur les vols longs.</p>
+            <p>Pour garder les cellules en vie pendant le vol, elles voyagent dans un habitat conçu sur mesure : contrôle thermique, télécommunications, mécanisme autonome de réalimentation du milieu de culture, et structure.</p>
+            <h4>Ma contribution</h4>
+            <ul>
+              <li>Sous-système <b>structure et environnement</b> : enveloppe légère, isolée thermiquement et étanche à l’air, qui protège les échantillons des pressions et températures extrêmes.</li>
+              <li>Modélisation 3D du <b>premier prototype</b> de l’habitat (vues en coupe ci-contre).</li>
+              <li>Dimensionnement des composants et vérification des marges (Reserve Factors) face aux efforts de lancement, d’ascension et de récupération.</li>
+              <li>Travail en équipe internationale, en anglais.</li>
+            </ul>
+            <div class="tools"><span>Fusion 360</span><span>Analyse structurale</span><span>Reserve Factors</span><span>Anglais</span></div>
+          </div>
+          <div class="gallery">
+            <figure class="third"><button type="button" aria-label="Agrandir : coupe de l'habitat"><img src="img/gem-coupe.jpg" alt="Vue en coupe de l'habitat empilé" loading="lazy"></button><figcaption>Coupe de l’habitat</figcaption></figure>
+            <figure style="grid-column:span 4"><button type="button" aria-label="Agrandir : détail de la paroi"><img src="img/gem-detail.jpg" alt="Détail en coupe de la paroi et du joint" loading="lazy"></button><figcaption>Paroi isolée et joint d’étanchéité</figcaption></figure>
+            <figure class="wide"><button type="button" aria-label="Agrandir : modules de l'habitat"><img src="img/gem-modules.jpg" alt="Trois modules cylindriques empilables" loading="lazy"></button><figcaption>Modules empilables — premier prototype</figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02 Expleo -->
+      <article class="project" id="expleo">
+        <div class="p-head">
+          <div class="p-rep"><span class="label">Rep.</span><b>02</b></div>
+          <div class="p-title"><div class="label">Expleo Group · client SigmaCabin (groupe POMA) · Gières</div><h3>Reconception d’une quille de télécabine avec silentbloc</h3></div>
+          <div class="p-meta"><span>Stagiaire ingénieur BE</span><span>Juin → Sept. 2025</span></div>
+        </div>
+        <div class="p-body">
+          <div class="p-text">
+            <p>La quille est la pièce structurelle fixée sous la cabine : elle rigidifie l’ensemble et encaisse le choc à l’entrée en gare. L’existant montrait des limites en flexion et en absorption ; le client imposait un amortissement par silentbloc.</p>
+            <h4>Démarche</h4>
+            <ul>
+              <li>Besoin flou au départ : j’ai posé les questions de caractérisation (orientation, encombrement, fixation, fonction) pour cadrer la demande.</li>
+              <li><b>3 géométries</b> modélisées ; 2 retenues car elles réutilisent un silentbloc déjà en service — pas de nouvelle pièce à développer.</li>
+              <li>Revue de conception avec le client, puis itérations : équerre renforcée contre le désalignement des axes, puis <b>bridage par frottement</b> car la cabine, déjà installée, ne pouvait pas être percée.</li>
+              <li>Matériaux : tube principal en <b>inox 304L</b> (soudable, économique), reste en <b>S355J0</b> (tenue au froid).</li>
+            </ul>
+            <div class="cotes">
+              <div class="cote"><span class="val">0,2 mm</span><span class="dim"></span><span class="txt">Jeu minimal issu de la chaîne de cotes : pas de contrainte parasite, bride libre.</span></div>
+              <div class="cote"><span class="val">3 → 1</span><span class="dim"></span><span class="txt">Géométries proposées → solution retenue après revue client.</span></div>
+            </div>
+            <h4>En parallèle</h4>
+            <p>Assemblage virtuel complet d’une cabine (projet Du Jas) dans NX à partir du document de configuration : contrôle des jeux et interférences, remontée des références manquantes ou obsolètes avant validation.</p>
+            <div class="tools"><span>Siemens NX</span><span>TeamCenter (PLM)</span><span>Chaîne de cotes</span><span>Revue de conception</span></div>
+          </div>
+          <div class="gallery">
+            <figure class="wide"><button type="button" aria-label="Agrandir : quille sous la cabine"><img class="cover" src="img/quille-dessous.jpg" alt="Quille montée sous le plancher de la cabine" loading="lazy"></button><figcaption>Quille montée sous le plancher</figcaption></figure>
+            <figure><button type="button" aria-label="Agrandir : fixation de la quille"><img class="cover" src="img/quille-3d.jpg" alt="Fixation de la quille en 3D" loading="lazy"></button><figcaption>Fixation et silentbloc</figcaption></figure>
+            <figure><button type="button" aria-label="Agrandir : renfort par frottement"><img class="cover" src="img/quille-renfort.jpg" alt="Renfort par bloc incliné serré sur la structure" loading="lazy"></button><figcaption>Renfort par bloc incliné</figcaption></figure>
+            <figure><button type="button" aria-label="Agrandir : coupe de l'axe"><img class="cover" src="img/quille-coupe.jpg" alt="Coupe de l'axe et des brides" loading="lazy"></button><figcaption>Coupe de l’axe</figcaption></figure>
+            <figure><button type="button" aria-label="Agrandir : cabine complète"><img src="img/quille-cabine.jpg" alt="Cabine complète avec la quille" loading="lazy"></button><figcaption>Cabine avec quille</figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03 EFST -->
+      <article class="project" id="efst">
+        <div class="p-head">
+          <div class="p-rep"><span class="label">Rep.</span><b>03</b></div>
+          <div class="p-title"><div class="label">ECAM Formula Student Team · Lyon</div><h3>Un châssis tubulaire entièrement paramétré</h3></div>
+          <div class="p-meta"><span>Ingénieur châssis</span><span>Sept. 2024 → Mai 2025</span></div>
+        </div>
+        <div class="p-body">
+          <div class="p-text">
+            <p>Le châssis doit s’adapter aux choix des autres pôles, qui fixent les <em>hard points</em> (liaisons au sol, moteur, pilote). J’ai construit l’esquisse filaire dans Fusion 360 autour de paramètres nommés : quand un hard point bouge, tout le châssis suit sans remodéliser.</p>
+            <ul>
+              <li>Repère posé sur le sol (plan XY), plan YZ comme plan de symétrie.</li>
+              <li>Paramètres pilotant front hoop, main hoop, nez, largeurs et sections de tubes.</li>
+              <li>Chaque cote vérifiée contre le règlement Formula Student (FS Rules).</li>
+              <li>Guide de paramétrage rédigé pour transmettre la méthode à l’équipe suivante.</li>
+              <li>Recherche d’un partenaire industriel pour fabriquer le châssis : consultation, devis, relances.</li>
+            </ul>
+            <div class="cotes">
+              <div class="cote"><span class="val">150 mm</span><span class="dim"></span><span class="txt">Garde au sol du nez — le règlement impose 30 mm minimum.</span></div>
+              <div class="cote"><span class="val">Ø25 × 2,5</span><span class="dim"></span><span class="txt">Tubes des arceaux (mm) ; Ø20 pour la structure d’impact latéral.</span></div>
+              <div class="cote"><span class="val">40°</span><span class="dim"></span><span class="txt">Angle du gabarit « Percy » — l’enveloppe du pilote.</span></div>
+            </div>
+            <div class="tools"><span>Fusion 360</span><span>Conception paramétrique</span><span>RDM</span><span>FS Rules</span><span>Achats</span></div>
+          </div>
+          <div class="gallery">
+            <figure class="wide"><button type="button" aria-label="Agrandir : véhicule complet"><img class="cover" src="img/efst-voiture.jpg" alt="Maquette numérique du véhicule complet" loading="lazy"></button><figcaption>Intégration du châssis dans la maquette complète</figcaption></figure>
+            <figure><button type="button" aria-label="Agrandir : châssis seul"><img class="cover" src="img/efst-chassis.jpg" alt="Châssis tubulaire seul" loading="lazy"></button><figcaption>Châssis tubulaire</figcaption></figure>
+            <figure><button type="button" aria-label="Agrandir : tableau des paramètres"><img src="img/efst-parametres.jpg" alt="Tableau des paramètres Fusion 360" loading="lazy"></button><figcaption>Table des paramètres</figcaption></figure>
+            <figure class="wide"><button type="button" aria-label="Agrandir : vocabulaire du châssis"><img src="img/efst-annote.jpg" alt="Schéma annoté des éléments du châssis" loading="lazy"></button><figcaption>Front hoop, main hoop, side impact, bulkhead</figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <!-- 04 FRADEM -->
+      <article class="project" id="fradem">
+        <div class="p-head">
+          <div class="p-rep"><span class="label">Rep.</span><b>04</b></div>
+          <div class="p-title"><div class="label">FRADEM Construction métallique · carrières · Domène</div><h3>Du bureau d’études à l’atelier : trois ouvrages en acier</h3></div>
+          <div class="p-meta"><span>Stage BTS CPI · 8 semaines</span><span>Mai → Juil. 2022</span></div>
+        </div>
+        <div class="p-body">
+          <div class="p-text">
+            <p>PME de conception, fabrication et maintenance de machines de carrière. J’ai pris en charge les petits projets du BE, de la 3D à la mise en plan avec débits pour la découpe plasma — et j’ai fabriqué une partie de mes pièces à l’atelier.</p>
+
+            <div class="sub">
+              <h4>Rack à tôle 4000 × 2000</h4>
+              <p>Profils HEA remplacés par des cornières : on gagne de la hauteur entre étages, avec un fond renforcé en croix contre les chocs de chariot. J’ai soudé un plateau et un côté moi-même — et appris qu’un entraxe de perçage oublié sur le plan se paie à l’atelier.</p>
+              <div class="cotes"><div class="cote"><span class="val">250 → 300 mm</span><span class="dim"></span><span class="txt">Entre étages ; 190 mm de passage restant avec 3 tôles de 632 kg sur le plateau.</span></div></div>
+            </div>
+            <div class="sub">
+              <h4>Hotte d’aspiration client</h4>
+              <p>Tôle pliée de 3 mm, 1850 × 1900 mm intérieur, boulonnée sur une machine de 1350 × 1550 mm. Faces interchangeables, guillotine sur glissières, renforts en U.</p>
+            </div>
+            <div class="sub">
+              <h4>Mât support de brise-roche hydraulique</h4>
+              <p>Mât, crinoline et passerelle selon la norme NF E 85-016. Calcul du moment à la base (statique, choc du BRH, vent zone 4 en Corse) pour dimensionner l’ancrage.</p>
+              <div class="cotes">
+                <div class="cote"><span class="val">65 900 N·m</span><span class="dim"></span><span class="txt">Moment maximal à la base du mât.</span></div>
+                <div class="cote"><span class="val">8 436 N &lt; 13 900 N</span><span class="dim"></span><span class="txt">Effort par goujon (6 goujons) face à la résistance fabricant — 4 minimum requis.</span></div>
+              </div>
+            </div>
+            <div class="tools"><span>SolidWorks</span><span>AutoCAD</span><span>Mise en plan</span><span>Débit plasma</span><span>Soudure</span></div>
+          </div>
+          <div class="gallery">
+            <figure><button type="button" aria-label="Agrandir : installation du brise-roche"><img class="cover" src="img/brh-installation.jpg" alt="Brise-roche sur son mât au-dessus du concasseur" loading="lazy"></button><figcaption>BRH au-dessus du concasseur</figcaption></figure>
+            <figure><button type="button" aria-label="Agrandir : mât fabriqué"><img class="cover" src="img/brh-mat-atelier.jpg" alt="Mât fabriqué à l'atelier" loading="lazy"></button><figcaption>Mât fabriqué à l’atelier</figcaption></figure>
+            <figure class="third"><button type="button" aria-label="Agrandir : mât et crinoline"><img src="img/brh-mat.jpg" alt="Mât avec crinoline et passerelle" loading="lazy"></button><figcaption>Mât et crinoline</figcaption></figure>
+            <figure class="third"><button type="button" aria-label="Agrandir : rack à tôle"><img src="img/rack-3d.jpg" alt="Étagère du rack à tôle en 3D" loading="lazy"></button><figcaption>Rack à tôle</figcaption></figure>
+            <figure class="third"><button type="button" aria-label="Agrandir : hotte d'aspiration"><img src="img/hotte-3d.jpg" alt="Hotte d'aspiration en tôle pliée" loading="lazy"></button><figcaption>Hotte d’aspiration</figcaption></figure>
+            <figure class="wide"><button type="button" aria-label="Agrandir : plateau soudé"><img class="cover" src="img/rack-atelier.jpg" alt="Plateau du rack soudé à l'atelier" loading="lazy"></button><figcaption>Plateau soudé par mes soins — diagonales égales</figcaption></figure>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="skills" id="competences">
+    <div class="wrap">
+      <h2 class="section-title">Compétences</h2>
+      <div class="skills-grid">
+        <div class="skill"><h3>CAO &amp; plans</h3><p><b>Siemens NX</b>, <b>Catia V5</b>, SolidWorks, Creo, Fusion 360, AutoCAD. Plans de définition, cotation fonctionnelle et tolérancement ISO GPS, chaînes de cotes.</p></div>
+        <div class="skill"><h3>Calcul &amp; simulation</h3><p>RDM, analyse de structures (poutres, plaques, flambement), dynamique des structures, <b>Abaqus</b> en statique et dynamique, Matlab, marges de résistance.</p></div>
+        <div class="skill"><h3>Qualité &amp; industrie</h3><p>AMDEC, 8D, QRQC, SPC/MSP, Lean (5S, Kaizen), normes ISO, plans de contrôle, programmation CNC.</p></div>
+        <div class="skill"><h3>Données &amp; PLM</h3><p><b>TeamCenter</b>, SAP, Power BI, Excel avancé, gestion documentaire, nomenclatures, SysML.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="path" id="parcours">
+    <div class="wrap">
+      <h2 class="section-title">Parcours</h2>
+      <ol>
+        <li><span class="when">Fév. → Juil. 2026</span><div><h3>Politecnico di Milano</h3><p>Échange en ingénierie aéronautique, cours en anglais : Structural Analysis, Structural Dynamics, Mechanical Design, simulation FEA sous Abaqus.</p></div></li>
+        <li><span class="when">2024 → 2027</span><div><h3>ECAM LaSalle, Lyon</h3><p>Diplôme d’ingénieur généraliste Arts &amp; Métiers, spécialisation Usine du futur &amp; qualité industrielle.</p></div></li>
+        <li><span class="when">2021 → 2023</span><div><h3>BTS Conception de produits industriels</h3><p>Lycée Édouard Branly, Chambéry. Modélisation 3D, dessin industriel, cahier des charges fonctionnel.</p></div></li>
+      </ol>
+      <div class="aside">
+        <span class="val">5<sup>e</sup></span>
+        <p><b>Wakeskate, niveau national.</b> 5<sup>e</sup> au championnat de France 2023, 6<sup>e</sup> en 2022, 20 h d’entraînement par semaine. La même logique qu’au bureau d’études : répéter, mesurer, corriger.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="label">Stage de fin d’études · 6 mois · dès février 2027</div>
+      <h2>Parlons de votre prochain projet.</h2>
+      <p>Bureau d’études, calcul de structures ou qualité industrielle : en France ou à l’étranger, je suis mobile.</p>
+      <div class="cta">
+        <a class="email" id="email" href="mailto:ken38420@gmail.com" style="color:inherit;text-decoration:none">ken38420@gmail.com</a>
+        <button class="btn" type="button" id="copy">Copier l’adresse</button>
+        <a class="btn ghost" href="https://www.linkedin.com/in/ken-flores-01949a240/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+      <div class="foot">© 2026 Ken Flores · Lyon · Visuels issus de mes rapports de stage et de projet.</div>
+    </div>
+  </section>
+</main>
+
+<dialog id="lb" aria-label="Image agrandie">
+  <button type="button" id="lb-close">Fermer ✕</button>
+  <img id="lb-img" alt="">
+  <p id="lb-cap"></p>
+</dialog>
+
+<script>
+(function(){
+  var lb=document.getElementById('lb'), img=document.getElementById('lb-img'), cap=document.getElementById('lb-cap');
+  document.querySelectorAll('.gallery button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.querySelector('img'), fc=b.parentElement.querySelector('figcaption');
+      img.src=i.src; img.alt=i.alt; cap.textContent=fc?fc.textContent:'';
+      if(lb.showModal) lb.showModal();
+    });
+  });
+  document.getElementById('lb-close').addEventListener('click',function(){lb.close();});
+  lb.addEventListener('click',function(e){ if(e.target===lb) lb.close(); });
+
+  var btn=document.getElementById('copy'), email=document.getElementById('email');
+  btn.addEventListener('click',function(){
+    var t=email.textContent;
+    function sel(){ var r=document.createRange(); r.selectNodeContents(email); var s=getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent='Sélectionnée'; }
+    try{
+      navigator.clipboard.writeText(t).then(function(){btn.textContent='Adresse copiée';},sel);
+    }catch(e){ sel(); }
+    setTimeout(function(){btn.textContent='Copier l’adresse';},2200);
+  });
+})();
+</script>
+</body>
+</html>
